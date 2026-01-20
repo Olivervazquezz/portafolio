@@ -1,11 +1,11 @@
 import React from 'react';
 import { Code2, Terminal, Shield } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { motion } from 'framer-motion';
 
 const Skills = () => {
   const { t } = useLanguage();
 
-  // Mapeamos los iconos manualmente, pero los títulos vienen del idioma
   const categories = [
     {
       title: t.skills.categories.backend,
@@ -27,18 +27,32 @@ const Skills = () => {
   return (
     <section className="bg-gray-900 py-20" id="skills">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }} // Solo se anima la primera vez
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {t.skills.title}
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             {t.skills.subtitle}
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {categories.map((category, index) => (
-            <div key={index} className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10 group">
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }} // <--- EL TRUCO: Delay multiplicado por el índice
+              className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10 group"
+            >
               <div className="bg-gray-900 w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 {category.icon}
               </div>
@@ -50,7 +64,7 @@ const Skills = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

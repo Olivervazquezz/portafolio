@@ -3,49 +3,60 @@ export const translations = {
     navbar: {
       projects: "Proyectos",
       contact: "Contacto",
-      resume: "Descargar Currículum",
+      resume: "Descargar CV",
       languageName: "English",
     },
     hero: {
-      badge: "Desarrollador Full-Stack y Entusiasta de la Seguridad",
+      badge: "Software Engineer in Progress", // Más profesional que "Entusiasta"
       greeting: "Hola, soy",
-      description: "Estudiante de Ingeniería construyendo soluciones digitales seguras y escalables. Especializado en Python, IoT y Ciberseguridad.",
+      // CAMBIO CLAVE AQUÍ: Enfoque en construcción y calidad
+      description: "Estudiante de Ingeniería enfocado en el desarrollo de software robusto. Creo soluciones full-stack escalables, integrando bases de datos eficientes y mejores prácticas de seguridad.",
       btnProject: "Ver Proyectos",
       btnContact: "Contactarme",
     },
     skills: {
       title: "Arsenal Técnico",
-      subtitle: "Stack tecnológico enfocado en desarrollo seguro y escalable.",
+      subtitle: "Stack tecnológico enfocado en desarrollo ágil y código seguro.",
       categories: {
         backend: "Backend y Bases de Datos",
-        frontend: "Frontend y Móvil",
-        security: "Seguridad y Herramientas",
+        frontend: "Frontend y Diseño UI", // Quitamos "Móvil" si no es foco, o lo dejamos
+        security: "Herramientas y Calidad", // "Seguridad" pasa a ser una herramienta más
       }
     },
     projects: {
       title: "Proyectos Destacados",
-      subtitle: "Una selección de soluciones técnicas donde he aplicado arquitectura de software y mejores prácticas de seguridad.",
+      subtitle: "Una selección de desarrollos donde he aplicado arquitectura de software, optimización de datos y código limpio.",
       cta: "Ver todo en GitHub",
       btnCode: "Código",
       btnDemo: "Demo",
+      btnLinkedin: "Ver Detalles",
       items: [
         {
           title: "TurnoMed",
-          description: "Plataforma de gestión para farmacias con enfoque en seguridad. Incluye autenticación robusta, roles de usuario y auditorías de vulnerabilidades.",
+          description: "Sistema de gestión clínica integral. Desarrollado con Python y SQL para optimizar flujos de atención, implementando protección de datos sensibles.",
         },
         {
           title: "VitaNova",
-          description: "Sistema web para monitoreo ambiental. Desarrollado bajo metodología Scrum, permitiendo visualización de datos en tiempo real.",
+          description: "Plataforma web de monitoreo ambiental. Arquitectura escalable que permite la visualización y análisis de datos en tiempo real.",
         },
         {
           title: "PawHome",
-          description: "Sistema inteligente para el cuidado de mascotas. Integra base de datos para registro de eventos y dashboard de visualización.",
+          description: "Solución inteligente para gestión de eventos. Integra lógica de backend compleja con bases de datos para el registro de actividades.",
         }
       ]
     },
+    experience: {
+      title: "Liderazgo y Comunidad",
+      subtitle: "Impacto más allá del código: impulsando la comunidad tecnológica estudiantil.",
+      role: "Director de Marketing",
+      organization: "Sociedad de Alumnos de ITC (SEITC)",
+      period: "Presente", 
+      description: "Lidero la estrategia de comunicación y difusión de eventos tecnológicos, logrando aumentar la participación estudiantil en hackathons y talleres. Coordino un equipo creativo para fortalecer la marca de la comunidad de Ingeniería en el campus.",
+    },
     contact: {
       title: "Hablemos",
-      subtitle: "¿Tienes un proyecto en mente o buscas un desarrollador enfocado en seguridad? ¡Contáctame!",
+      // CAMBIO CLAVE: Ya no pide "seguridad", pide "ingeniero"
+      subtitle: "¿Tienes un proyecto en mente o buscas un ingeniero de software para tu equipo? ¡Estoy listo para aportar!",
       email: "Correo Electrónico",
       phone: "Teléfono / WhatsApp",
       location: "Ubicación",
@@ -62,45 +73,55 @@ export const translations = {
       languageName: "Español",
     },
     hero: {
-      badge: "Full-Stack Developer & Security Enthusiast",
+      badge: "Software Engineer in Progress",
       greeting: "Hi, I'm",
-      description: "CS Student building secure and scalable digital solutions. Specialized in Python, IoT, and Cybersecurity.",
+      // CAMBIO CLAVE EN INGLÉS
+      description: "Engineering student focused on building robust software. I create scalable full-stack solutions, integrating efficient databases and security best practices.",
       btnProject: "View Projects",
       btnContact: "Contact Me",
     },
     skills: {
       title: "Technical Arsenal",
-      subtitle: "Tech stack focused on secure and scalable development.",
+      subtitle: "Tech stack focused on agile development and secure code.",
       categories: {
         backend: "Backend & Database",
-        frontend: "Frontend & Mobile",
-        security: "Security & Tools",
+        frontend: "Frontend & UI Design",
+        security: "Tools & Quality",
       }
     },
     projects: {
       title: "Featured Projects",
-      subtitle: "A selection of technical solutions where I applied software architecture and security best practices.",
+      subtitle: "A selection of developments where I applied software architecture, data optimization, and clean code.",
       cta: "View all on GitHub",
       btnCode: "Code",
       btnDemo: "Demo",
+      btnLinkedin: "View Details",
       items: [
         {
           title: "TurnoMed",
-          description: "Pharmacy management platform with a focus on security. Includes robust authentication, user roles, and vulnerability audits.",
+          description: "Comprehensive clinical management system. Built with Python and SQL to optimize workflows, implementing sensitive data protection.",
         },
         {
           title: "VitaNova",
-          description: "Web system for environmental monitoring. Developed using Scrum methodology, allowing real-time data visualization.",
+          description: "Web platform for environmental monitoring. Scalable architecture allowing real-time data visualization and analysis.",
         },
         {
           title: "PawHome",
-          description: "Smart system for pet care. Integrates a database for event logging and a visualization dashboard.",
+          description: "Smart event management solution. Integrates complex backend logic with databases for activity logging.",
         }
       ]
     },
+    experience: {
+      title: "Leadership & Community",
+      subtitle: "Impact beyond code: driving the student tech community forward.",
+      role: "Marketing Director",
+      organization: "CS Student Society (SEITC)",
+      period: "Present",
+      description: "Leading communication strategies and event promotion, successfully increasing student participation in hackathons and workshops. Coordinating a creative team to strengthen the Engineering community brand on campus.",
+    },
     contact: {
       title: "Let's Talk",
-      subtitle: "Have a project in mind or looking for a security-focused developer? Get in touch!",
+      subtitle: "Have a project in mind or looking for a software engineer for your team? I'm ready to contribute!",
       email: "Email Address",
       phone: "Phone / WhatsApp",
       location: "Location",

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -9,20 +10,30 @@ const Contact = () => {
     <section className="bg-gray-900 py-20 border-t border-gray-800" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Encabezado */}
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {t.contact.title}
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             {t.contact.subtitle}
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          {/* Columna Izquierda: Información de Contacto */}
-          <div className="space-y-8">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
             {/* Tarjeta Email */}
             <div className="flex items-start space-x-4">
               <div className="bg-blue-500/10 p-3 rounded-lg text-blue-500">
@@ -36,7 +47,7 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Tarjeta WhatsApp/Teléfono */}
+            {/* Tarjeta WhatsApp */}
             <div className="flex items-start space-x-4">
               <div className="bg-green-500/10 p-3 rounded-lg text-green-500">
                 <Phone size={24} />
@@ -67,20 +78,24 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Redes Sociales Grandes */}
             <div className="pt-8 flex gap-4">
                 <a href="https://github.com/Olivervazquezz" target="_blank" className="p-3 bg-gray-800 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition-all border border-gray-700">
                     <Github size={24} />
                 </a>
-                <a href="https://linkedin.com/in/Olivervazquezz" target="_blank" className="p-3 bg-gray-800 rounded-full text-gray-400 hover:text-blue-400 hover:bg-gray-700 transition-all border border-gray-700">
+                <a href="https://www.linkedin.com/in/oliver-vázquez-lima" target="_blank" className="p-3 bg-gray-800 rounded-full text-gray-400 hover:text-blue-400 hover:bg-gray-700 transition-all border border-gray-700">
                     <Linkedin size={24} />
                 </a>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Columna Derecha: Formulario o Llamada a la Acción Visual */}
-          <div className="bg-gray-800/50 p-8 rounded-2xl border border-gray-700 relative overflow-hidden">
-            {/* Decoración de fondo */}
+          {/* Formulario/CTA Derecha */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-gray-800/50 p-8 rounded-2xl border border-gray-700 relative overflow-hidden"
+          >
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
             
             <h3 className="text-2xl font-bold text-white mb-6">Envíame un mensaje directo</h3>
@@ -95,7 +110,7 @@ const Contact = () => {
               <Send size={20} className="mr-2" />
               {t.contact.cta}
             </a>
-          </div>
+          </motion.div>
 
         </div>
       </div>

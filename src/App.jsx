@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
+import Experience from './components/Experience'; // <--- Importar
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import { useLanguage } from './context/LanguageContext';
@@ -15,8 +16,9 @@ function App() {
       <main>
         <Hero />
         <Skills />
+        <Experience />
         <Projects />
-        <Contact /> {}
+        <Contact />
       </main>
       
       <footer className="bg-gray-900 py-8 text-center text-gray-500 text-sm border-t border-gray-800">
