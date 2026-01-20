@@ -45,7 +45,7 @@ const Navbar = () => {
             </div>
             
             <a 
-              href="/CV_Oliver_Vazquez.pdf" 
+              href="/CV_OliverVázquez.pdf" 
               className="hidden sm:flex items-center gap-2 ml-4 px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20"
             >
               <Download size={16} />
