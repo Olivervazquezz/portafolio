@@ -40,10 +40,9 @@ const Experience = () => {
           >
             <div className="relative rounded-2xl overflow-hidden border border-gray-700 shadow-2xl group">
               <div className="absolute inset-0 bg-blue-500/10 group-hover:bg-transparent transition-colors z-10" />
-              {}
               <img 
                 src="/Softtek.png" 
-                alt="SEITC Event" 
+                alt="SAITC Event" 
                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
                 onError={(e) => {
                     e.target.onerror = null; 
@@ -79,15 +78,15 @@ const Experience = () => {
               {t.experience.description}
             </p>
 
-            {}
+            {/* Datos duros o logros TRADUCIDOS */}
             <div className="grid grid-cols-2 gap-4 pt-4">
               <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
                 <span className="block text-2xl font-bold text-white">+500</span>
-                <span className="text-xs text-gray-400">Estudiantes impactados</span>
+                <span className="text-xs text-gray-400">{t.experience.stats.students}</span>
               </div>
               <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
                 <span className="block text-2xl font-bold text-white">10+</span>
-                <span className="text-xs text-gray-400">Eventos organizados</span>
+                <span className="text-xs text-gray-400">{t.experience.stats.events}</span>
               </div>
             </div>
           </motion.div>

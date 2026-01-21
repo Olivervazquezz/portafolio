@@ -7,7 +7,7 @@ export const translations = {
       languageName: "English",
     },
     hero: {
-      badge: "Software Engineer in Progress",
+      badge: "Ingeniero de Software en Proceso",
       greeting: "Hola, soy",
       description: "Estudiante de Ingeniería enfocado en el desarrollo de software robusto. Creo soluciones full-stack escalables, integrando bases de datos eficientes y mejores prácticas de seguridad.",
       btnProject: "Ver Proyectos",
@@ -48,9 +48,14 @@ export const translations = {
       title: "Liderazgo y Comunidad",
       subtitle: "Impacto más allá del código: impulsando la comunidad tecnológica estudiantil.",
       role: "Director de Marketing",
-      organization: "Sociedad de Alumnos de ITC (SEITC)",
+      organization: "Sociedad de Alumnos de ITC (SAITC)",
       period: "Presente", 
       description: "Lidero la estrategia de comunicación y difusión de eventos tecnológicos, logrando aumentar la participación estudiantil en hackathons y talleres. Coordino un equipo creativo para fortalecer la marca de la comunidad de Ingeniería en el campus.",
+      // NUEVO: Datos numéricos
+      stats: {
+        students: "Estudiantes impactados",
+        events: "Eventos organizados"
+      }
     },
     contact: {
       title: "Hablemos",
@@ -59,7 +64,10 @@ export const translations = {
       phone: "Teléfono / WhatsApp",
       location: "Ubicación",
       locationText: "Monterrey, Nuevo León, México",
-      cta: "Enviar Mensaje"
+      cta: "Enviar Mensaje",
+      // NUEVO: Textos de la tarjeta de contacto
+      formTitle: "Envíame un mensaje directo",
+      formDescription: "Estoy disponible para prácticas profesionales, proyectos freelance o colaboraciones. Respondo en menos de 24 horas."
     },
     footer: "Construido con React y Tailwind."
   },
@@ -112,9 +120,14 @@ export const translations = {
       title: "Leadership & Community",
       subtitle: "Impact beyond code: driving the student tech community forward.",
       role: "Marketing Director",
-      organization: "CS Student Society (SEITC)",
+      organization: "CS Student Society (SAITC)",
       period: "Present",
       description: "Leading communication strategies and event promotion, successfully increasing student participation in hackathons and workshops. Coordinating a creative team to strengthen the Engineering community brand on campus.",
+      // NUEVO: Stats translated
+      stats: {
+        students: "Students impacted",
+        events: "Events organized"
+      }
     },
     contact: {
       title: "Let's Talk",
@@ -123,7 +136,10 @@ export const translations = {
       phone: "Phone / WhatsApp",
       location: "Location",
       locationText: "Monterrey, Nuevo Leon, Mexico",
-      cta: "Send Message"
+      cta: "Send Message",
+      // NUEVO: Contact card translated
+      formTitle: "Send me a direct message",
+      formDescription: "I am available for internships, freelance projects, or collaborations. I respond in less than 24 hours."
     },
     footer: "Built with React & Tailwind."
   }

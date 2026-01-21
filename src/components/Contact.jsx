@@ -88,7 +88,7 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          {/* Formulario/CTA Derecha */}
+          {/* Formulario/CTA Derecha - TRADUCIDO */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -98,9 +98,11 @@ const Contact = () => {
           >
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
             
-            <h3 className="text-2xl font-bold text-white mb-6">Envíame un mensaje directo</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">
+              {t.contact.formTitle}
+            </h3>
             <p className="text-gray-400 mb-8">
-              Estoy disponible para prácticas profesionales, proyectos freelance o colaboraciones. Respondo en menos de 24 horas.
+              {t.contact.formDescription}
             </p>
             
             <a 
