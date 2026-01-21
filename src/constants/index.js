@@ -7,9 +7,8 @@ export const translations = {
       languageName: "English",
     },
     hero: {
-      badge: "Software Engineer in Progress", // Más profesional que "Entusiasta"
+      badge: "Software Engineer in Progress",
       greeting: "Hola, soy",
-      // CAMBIO CLAVE AQUÍ: Enfoque en construcción y calidad
       description: "Estudiante de Ingeniería enfocado en el desarrollo de software robusto. Creo soluciones full-stack escalables, integrando bases de datos eficientes y mejores prácticas de seguridad.",
       btnProject: "Ver Proyectos",
       btnContact: "Contactarme",
@@ -19,8 +18,8 @@ export const translations = {
       subtitle: "Stack tecnológico enfocado en desarrollo ágil y código seguro.",
       categories: {
         backend: "Backend y Bases de Datos",
-        frontend: "Frontend y Diseño UI", // Quitamos "Móvil" si no es foco, o lo dejamos
-        security: "Herramientas y Calidad", // "Seguridad" pasa a ser una herramienta más
+        frontend: "Frontend y Diseño UI",
+        security: "Herramientas y Calidad",
       }
     },
     projects: {
@@ -33,11 +32,11 @@ export const translations = {
       items: [
         {
           title: "TurnoMed",
-          description: "Sistema de gestión clínica integral. Desarrollado con Python y SQL para optimizar flujos de atención, implementando protección de datos sensibles.",
+          description: "Sistema de gestión clínica integral potenciado con Gemini AI para generar resúmenes inteligentes de datos médicos. Desarrollado con Python y SQL, optimizando flujos de atención.",
         },
         {
           title: "VitaNova",
-          description: "Plataforma web de monitoreo ambiental. Arquitectura escalable que permite la visualización y análisis de datos en tiempo real.",
+          description: "Plataforma web de monitoreo ambiental que integra un Chatbot interactivo para asistencia al usuario. Arquitectura escalable para visualización de datos en tiempo real.",
         },
         {
           title: "PawHome",
@@ -55,7 +54,6 @@ export const translations = {
     },
     contact: {
       title: "Hablemos",
-      // CAMBIO CLAVE: Ya no pide "seguridad", pide "ingeniero"
       subtitle: "¿Tienes un proyecto en mente o buscas un ingeniero de software para tu equipo? ¡Estoy listo para aportar!",
       email: "Correo Electrónico",
       phone: "Teléfono / WhatsApp",
@@ -75,7 +73,6 @@ export const translations = {
     hero: {
       badge: "Software Engineer in Progress",
       greeting: "Hi, I'm",
-      // CAMBIO CLAVE EN INGLÉS
       description: "Engineering student focused on building robust software. I create scalable full-stack solutions, integrating efficient databases and security best practices.",
       btnProject: "View Projects",
       btnContact: "Contact Me",
@@ -99,11 +96,11 @@ export const translations = {
       items: [
         {
           title: "TurnoMed",
-          description: "Comprehensive clinical management system. Built with Python and SQL to optimize workflows, implementing sensitive data protection.",
+          description: "Comprehensive clinical management system powered by Gemini AI for intelligent medical data summarization. Built with Python and SQL to optimize workflows.",
         },
         {
           title: "VitaNova",
-          description: "Web platform for environmental monitoring. Scalable architecture allowing real-time data visualization and analysis.",
+          description: "Web platform for environmental monitoring featuring an interactive Chatbot for user assistance. Scalable architecture allowing real-time data visualization.",
         },
         {
           title: "PawHome",

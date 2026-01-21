@@ -32,7 +32,7 @@ const Experience = () => {
           
           {/* Columna Izquierda: La Foto del Evento */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }} // Entra desde la izquierda
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
@@ -40,14 +40,14 @@ const Experience = () => {
           >
             <div className="relative rounded-2xl overflow-hidden border border-gray-700 shadow-2xl group">
               <div className="absolute inset-0 bg-blue-500/10 group-hover:bg-transparent transition-colors z-10" />
-              {/* Asegúrate de poner la foto 'event.jpg' en public */}
+              {}
               <img 
-                src="/event.jpg" 
-                alt="SAITC Event" 
+                src="/Softtek.png" 
+                alt="SEITC Event" 
                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
                 onError={(e) => {
                     e.target.onerror = null; 
-                    e.target.src = "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=1000&auto=format&fit=crop"; // Foto genérica de evento tech si falla la tuya
+                    e.target.src = "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=1000&auto=format&fit=crop";
                 }}
               />
             </div>
@@ -55,7 +55,7 @@ const Experience = () => {
 
           {/* Columna Derecha: El Texto */}
           <motion.div 
-            initial={{ opacity: 0, x: 50 }} // Entra desde la derecha
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -79,14 +79,14 @@ const Experience = () => {
               {t.experience.description}
             </p>
 
-            {/* Datos duros o logros (Opcional, se ve muy pro) */}
+            {}
             <div className="grid grid-cols-2 gap-4 pt-4">
               <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
                 <span className="block text-2xl font-bold text-white">+500</span>
                 <span className="text-xs text-gray-400">Estudiantes impactados</span>
               </div>
               <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
-                <span className="block text-2xl font-bold text-white">15+</span>
+                <span className="block text-2xl font-bold text-white">10+</span>
                 <span className="text-xs text-gray-400">Eventos organizados</span>
               </div>
             </div>
