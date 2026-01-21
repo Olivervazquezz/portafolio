@@ -7,7 +7,7 @@ const Navbar = () => {
   const { toggleLanguage, t } = useLanguage();
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -20,11 +20,12 @@ const Navbar = () => {
               &lt;Oliver /&gt;
             </span>
           </div>
-          
+
           <div className="flex items-center space-x-4">
-            <button 
+            <button
               onClick={toggleLanguage}
               className="flex items-center space-x-2 text-gray-300 hover:text-white px-3 py-1.5 rounded-md border border-gray-700 hover:border-blue-500 transition-all text-sm font-medium min-w-[100px] justify-center"
+              aria-label="Toggle language"
             >
               <Languages size={16} />
               <span>{t.navbar.languageName}</span>
@@ -33,19 +34,19 @@ const Navbar = () => {
             <div className="h-6 w-px bg-gray-700 mx-2 hidden sm:block"></div>
 
             <div className="hidden md:flex space-x-3">
-                <a href="https://github.com/Olivervazquezz" target="_blank" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://github.com/Olivervazquezz" target="_blank" aria-label="Github Profile" className="text-gray-400 hover:text-white transition-colors">
                 <Github size={20} />
-                </a>
-                <a href="https://www.linkedin.com/in/oliver-vázquez-lima" target="_blank" className="text-gray-400 hover:text-white transition-colors">
+              </a>
+              <a href="https://www.linkedin.com/in/oliver-vázquez-lima" target="_blank" aria-label="LinkedIn Profile" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin size={20} />
-                </a>
-                <a href="mailto:olivervazquezz13@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+              </a>
+              <a href="mailto:olivervazquezz13@gmail.com" aria-label="Send Email" className="text-gray-400 hover:text-white transition-colors">
                 <Mail size={20} />
-                </a>
+              </a>
             </div>
-            
-            <a 
-              href="/CV_OliverVázquez.pdf" 
+
+            <a
+              href="/CV_OliverVázquez.pdf"
               className="hidden sm:flex items-center gap-2 ml-4 px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20"
             >
               <Download size={16} />
