@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, Terminal, Shield } from 'lucide-react';
+import { Code2, Terminal, Shield, Bot } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
 
@@ -10,17 +10,22 @@ const Skills = () => {
     {
       title: t.skills.categories.backend,
       icon: <Terminal className="w-8 h-8 text-blue-500" />,
-      skills: ["Python", "Node.js", "C++", "Flask", "SQL", "MySQL", "API REST"]
+      skills: ["Python", "FastAPI", "Flask", "Node.js", "Express", "C++", "SQL", "SQLAlchemy"]
     },
     {
       title: t.skills.categories.frontend,
       icon: <Code2 className="w-8 h-8 text-purple-500" />,
-      skills: ["React", "JavaScript", "Tailwind CSS", "Swift", "HTML/CSS", "Figma"]
+      skills: ["React", "Next.js", "JavaScript", "Swift", "Tailwind CSS", "HTML/CSS", "Figma"]
     },
     {
-      title: t.skills.categories.security,
+      title: t.skills.categories.ai,
+      icon: <Bot className="w-8 h-8 text-cyan-500" />,
+      skills: ["OpenAI API", "Gemini API", "LangChain", "Make (Integromat)", "AI Agents"]
+    },
+    {
+      title: t.skills.categories.tools,
       icon: <Shield className="w-8 h-8 text-green-500" />,
-      skills: ["OWASP ZAP", "Linux", "Git/GitHub", "Postman", "Network Protocols", "Metasploit"]
+      skills: ["Git/GitHub", "Docker", "Linux", "Postman", "OWASP ZAP", "Bandit", "RBAC", "Firebase"]
     }
   ];
 
@@ -43,7 +48,7 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {categories.map((category, index) => (
             <motion.div 
               key={index}

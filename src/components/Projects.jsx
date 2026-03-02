@@ -8,10 +8,28 @@ const Projects = () => {
 
   const projectsData = [
     {
-      ...t.projects.items[0], // TurnoMed
-      // AQUÍ ESTÁN LOS TAGS NUEVOS:
-      tech: ["Python Flask", "Gemini AI", "MSSQL", "Security"],
+      ...t.projects.items[0], // WorkHub MTY
+      tech: ["Next.js", "FastAPI", "SQL", "AI Module", "QR System"],
       github: null,
+      linkedin: "https://www.linkedin.com/in/oliver-v%C3%A1zquez-lima/details/projects/",
+      demos: null,
+      image: null
+    },
+    {
+      ...t.projects.items[1], // Swirvle
+      tech: ["OpenAI API", "Gemini API", "Make", "Python", "Automation"],
+      github: null,
+      linkedin: "https://www.linkedin.com/in/oliver-v%C3%A1zquez-lima/details/experience/",
+      demos: null,
+      image: null
+    },
+    {
+      ...t.projects.items[2], // TurnoMed
+      tech: ["Python Flask", "Swift", "MSSQL", "OWASP ZAP", "Security"],
+      github: [
+        { label: "Admin App", url: "https://github.com/TheWau05/RETO_Admin" },
+        { label: "iOS User App", url: "https://github.com/marcoramosj/IOS-Reto" }
+      ],
       linkedin: "https://www.linkedin.com/in/oliver-v%C3%A1zquez-lima/details/projects/",
       demos: [
         { label: "Demo Admin", url: "https://tecmx-my.sharepoint.com/:v:/g/personal/cristina_gonzalez_cordova_tec_mx/IQAhOZ8HCLoZQIoYEvzklRW_Adp51j7nBok4YUNalH-hhYg?e=FftOyO&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" },
@@ -20,21 +38,12 @@ const Projects = () => {
       image: "/TurnoMed.png"
     },
     {
-      ...t.projects.items[1], // VitaNova
-      // AQUÍ ESTÁ EL TAG DE CHATBOT:
-      tech: ["Node.js", "React", "Chatbot", "MySQL"],
+      ...t.projects.items[3], // VitaNova
+      tech: ["Node.js", "Express", "React", "MySQL", "Chatbot"],
       github: "https://github.com/Olivervazquezz/Awaq-web",
-      linkedin: null,
-      demos: null,
-      image: "/Awaq.png"
-    },
-    {
-      ...t.projects.items[2], // PawHome
-      tech: ["IoT System", "C++", "MySQL", "Data Viz"],
-      github: null,
       linkedin: "https://www.linkedin.com/in/oliver-v%C3%A1zquez-lima/details/projects/",
       demos: null,
-      image: "/PawHome.jpg"
+      image: "/Awaq.png"
     }
   ];
 
@@ -58,7 +67,7 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projectsData.map((project, index) => (
             <motion.div 
               key={index}
@@ -68,17 +77,29 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.15 }}
               className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all hover:shadow-xl group flex flex-col"
             >
-              <div className="h-48 relative overflow-hidden bg-gray-900">
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all z-10" />
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                  onError={(e) => {
-                    e.target.style.display = 'none'; 
-                    e.target.parentElement.classList.add('bg-gradient-to-br', 'from-blue-900', 'to-gray-900');
-                  }}
-                />
+              <div className="h-48 relative overflow-hidden bg-gradient-to-br from-blue-900/60 to-gray-900">
+                {project.image ? (
+                  <>
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all z-10" />
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                      onError={(e) => {
+                        e.target.style.display = 'none'; 
+                      }}
+                    />
+                  </>
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <span className="text-5xl font-bold text-white/10">{project.title}</span>
+                  </div>
+                )}
+                {project.tag && (
+                  <span className="absolute top-3 right-3 z-20 text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-600/90 text-white backdrop-blur-sm">
+                    {project.tag}
+                  </span>
+                )}
               </div>
 
               <div className="p-6 flex flex-col flex-grow">
@@ -98,24 +119,24 @@ const Projects = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-700 mt-auto">
-                  {project.github && (
-                    <a href={project.github} target="_blank" className="flex items-center gap-1.5 text-xs font-medium text-white bg-gray-700 hover:bg-gray-600 px-3 py-1.5 rounded-md transition-colors">
+                  {project.github && Array.isArray(project.github) ? (
+                    project.github.map((repo, i) => (
+                      <a key={i} href={repo.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-xs font-medium text-white bg-gray-700 hover:bg-gray-600 px-3 py-1.5 rounded-md transition-colors">
+                        <Github size={14} /> {repo.label}
+                      </a>
+                    ))
+                  ) : project.github ? (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-xs font-medium text-white bg-gray-700 hover:bg-gray-600 px-3 py-1.5 rounded-md transition-colors">
                       <Github size={14} /> {t.projects.btnCode}
                     </a>
-                  )}
-
-                  {project.linkedin && (
-                    <a href={project.linkedin} target="_blank" className="flex items-center gap-1.5 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 px-3 py-1.5 rounded-md transition-colors">
-                      {/* AQUÍ ESTABA EL ERROR DE TRADUCCIÓN, YA CORREGIDO: */}
-                      <Linkedin size={14} /> {t.projects.btnLinkedin}
-                    </a>
-                  )}
+                  ) : null}
 
                   {project.demos && project.demos.map((demo, i) => (
                     <a 
                       key={i} 
                       href={demo.url} 
-                      target="_blank" 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-1.5 text-xs font-medium text-gray-300 border border-gray-600 hover:border-blue-400 hover:text-white px-3 py-1.5 rounded-md transition-colors"
                     >
                       <PlayCircle size={14} /> {demo.label}
@@ -123,7 +144,7 @@ const Projects = () => {
                   ))}
 
                   {project.demo && (
-                     <a href={project.demo} target="_blank" className="flex items-center gap-1.5 text-xs font-medium text-white bg-gray-700 hover:bg-gray-600 px-3 py-1.5 rounded-md transition-colors">
+                     <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-xs font-medium text-white bg-gray-700 hover:bg-gray-600 px-3 py-1.5 rounded-md transition-colors">
                       <ExternalLink size={14} /> Demo
                     </a>
                   )}
@@ -134,6 +155,15 @@ const Projects = () => {
                     </span>
                   )}
                 </div>
+
+                {project.linkedin && (
+                  <button 
+                    onClick={() => window.open(project.linkedin, '_blank', 'noopener,noreferrer')}
+                    className="flex items-center justify-center gap-1.5 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded-md transition-colors mt-3 w-full cursor-pointer"
+                  >
+                    <Linkedin size={14} /> {t.projects.btnLinkedin}
+                  </button>
+                )}
               </div>
             </motion.div>
           ))}

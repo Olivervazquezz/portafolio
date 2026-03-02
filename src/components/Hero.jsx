@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Terminal } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Hero = () => {
   const { t } = useLanguage();
+  const [badgeIndex, setBadgeIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBadgeIndex((prev) => (prev + 1) % t.hero.badges.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [t.hero.badges.length]);
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-gray-900 pt-20 pb-10 overflow-hidden relative">
@@ -12,18 +20,27 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center gap-12">
         
-        {/* COLUMNA IZQUIERDA: TEXTO (Entra desde izquierda) */}
+        {/* COLUMNA IZQUIERDA: TEXTO */}
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex-1 text-center md:text-left"
         >
-          <div className="inline-flex items-center space-x-2 bg-gray-800 rounded-full px-3 py-1 mb-6 border border-gray-700">
-            <Terminal size={14} className="text-blue-400" />
-            <span className="text-gray-300 text-sm font-mono">
-              {t.hero.badge}
-            </span>
+          <div className="inline-flex items-center space-x-2 bg-gray-800 rounded-full px-4 py-1.5 mb-6 border border-gray-700 overflow-hidden">
+            <Terminal size={14} className="text-blue-400 flex-shrink-0" />
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={badgeIndex}
+                initial={{ y: 16, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -16, opacity: 0 }}
+                transition={{ duration: 0.35, ease: "easeInOut" }}
+                className="text-gray-300 text-sm font-mono whitespace-nowrap"
+              >
+                {t.hero.badges[badgeIndex]}
+              </motion.span>
+            </AnimatePresence>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
@@ -48,11 +65,11 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* COLUMNA DERECHA: FOTO (Entra desde derecha) */}
+        {/* COLUMNA DERECHA: FOTO */}
         <motion.div 
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }} // Un poco después del texto
+          transition={{ duration: 0.8, delay: 0.4 }}
           className="flex-1 flex justify-center md:justify-end relative"
         >
           <div className="relative w-64 h-64 md:w-80 md:h-80">
