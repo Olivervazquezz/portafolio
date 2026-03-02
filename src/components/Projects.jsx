@@ -10,7 +10,7 @@ const Projects = () => {
     {
       ...t.projects.items[0], // WorkHub MTY
       tech: ["Next.js", "FastAPI", "SQL", "AI Module", "QR System"],
-      github: null,
+      github: "https://github.com/Olivervazquezz/Accenture",
       linkedin: "https://www.linkedin.com/in/oliver-v%C3%A1zquez-lima/details/projects/",
       demos: null,
       image: null
