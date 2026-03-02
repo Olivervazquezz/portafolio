@@ -58,8 +58,12 @@ const Hero = () => {
           <div className="relative w-64 h-64 md:w-80 md:h-80">
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-full opacity-20 blur-lg animate-pulse"></div>
             <img 
-              src="/profile.webp" 
-              alt="Oliver Vázquez" 
+              src="/profile-optimized.webp" 
+              alt="Oliver Vázquez"
+              width={640}
+              height={640}
+              fetchPriority="high"
+              decoding="async"
               className="relative w-full h-full object-cover rounded-full border-4 border-gray-800 shadow-2xl"
               onError={(e) => {
                 e.target.onerror = null; 
