@@ -58,7 +58,7 @@ const Hero = () => {
           <div className="relative w-64 h-64 md:w-80 md:h-80">
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-full opacity-20 blur-lg animate-pulse"></div>
             <img 
-              src="/profile-optimized.webp" 
+              src="/profile-original.webp" 
               alt="Oliver Vázquez"
               width={640}
               height={640}
